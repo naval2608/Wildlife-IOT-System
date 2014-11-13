@@ -1,6 +1,6 @@
 __author__ = 'naval-ubuntu'
 
-from coap_sensor import BaseClient;
+from CoAP_BaseClient import BaseClient;
 
 sensor = BaseClient()
 sensor.process()

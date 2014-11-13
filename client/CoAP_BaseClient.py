@@ -2,7 +2,7 @@
 # In one window:
 #  python server.py
 # In another window:
-#  python coap_sensor.py -h localhost -u Geolocation
+#  python CoAP_BaseClient.py -h localhost -u Geolocation
 
 __author__ = 'naval-ubuntu'
 
@@ -23,14 +23,14 @@ class BaseClient():
         while True:
             rxr = self.ep.process(10000)
             if rxr is None:
-                print 'No activity'
+                print 'No Request'
                 continue
             print rxr.message
             msg = rxr.message
             if coapy.GET != msg.code:
                 continue
             uri = msg.findOption(coapy.options.UriPath)
-            print "Recieved the URI:",uri
+            print "Recieved the GET URI:",uri
             if uri is None:
                 continue
             if uri.value == "Geolocation":
