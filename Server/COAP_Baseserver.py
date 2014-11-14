@@ -20,14 +20,18 @@ class BaseServer():
         req = coapy.connection.Message(transaction_type=1,code=coapy.GET, uri_path=self.uri_path)
         ep = coapy.connection.EndPoint()
         tx_rec = ep.send(req, remote)
-
+        wait_counter = 0
         while tx_rec.response is None:
             rv = ep.process(1000)
+
             if rv is None:
                 print 'No message received; waiting'
+                wait_counter += 1
+                if wait_counter == 10:
+                    print 'No message received; New request sent'
+                    break
                 continue
             msg = rv.message
-            print msg
 
             if msg.RST == tx_rec.response_type:
                 print 'Server responded with reset'
@@ -41,7 +45,7 @@ class BaseServer():
                 print msg.payload
             elif 'application/link-format' == ct.value_as_string:
                 data = json.loads(msg.payload)
-                print "Got NON Payload from Sensor"
+                print "Got NON Payload from Sensor,",msg
                 return data
             else:
                 print 'Unhandled content type'
