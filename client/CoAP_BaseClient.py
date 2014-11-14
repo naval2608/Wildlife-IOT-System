@@ -1,10 +1,4 @@
-# Demonstration local server.
-# In one window:
-#  python server.py
-# In another window:
-#  python CoAP_BaseClient.py -h localhost -u Geolocation
-
-__author__ = 'naval-ubuntu'
+__author__ = 'naval gupta'
 
 import sys
 import coapy.connection

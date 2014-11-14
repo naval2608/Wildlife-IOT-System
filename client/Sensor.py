@@ -1,4 +1,4 @@
-__author__ = 'naval-ubuntu'
+__author__ = 'naval gupta'
 
 from CoAP_BaseClient import BaseClient;
 

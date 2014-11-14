@@ -1,9 +1,10 @@
-__author__ = 'naval-ubuntu'
+__author__ = 'naval gupta'
 
-#import MySQLdb
+import MySQLdb
 import smtplib
 from email.mime.text import MIMEText
 import os
+import time
 from COAP_Baseserver import BaseServer;
 
 def send_mail():
@@ -32,10 +33,9 @@ def send_mail():
     except smtplib.SMTPException as error:
         print "Error: unable to send email :  {err}".format(err=error)
 
-
 def insert_sensor_info(id,lat,long,time_info):
     # Open database connection
-    db = MySQLdb.connect("localhost", "root", "1234", "iot_project");
+    db = MySQLdb.connect("localhost", "root", "", "iot_project");
     cursor = db.cursor()
     sql = "INSERT INTO sensor_info(rfid,latitude,longitude,record_time) VALUES ('" \
           + id + "'," + str(lat) + "," + str(long) + ",'" + time_info + "')";
@@ -56,10 +56,27 @@ def generate_alarm():
     except Exception as error:
         print "Error: unable to generate alarm :  {err}".format(err=error)
 
+def add_sensor_data(data):
+    if data:
+        id = data['rfid']
+        latitude = data['location']['latitude']
+        longitude = data['location']['longitude']
+        record_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(data['record_time']))
+        print "Incoming data- Rfid:",id," Timestamp:",str(record_time)
+        insert_sensor_info(id,latitude,longitude,record_time);
+
+def monitor_data():
+    print "hello"
+
 if __name__=="__main__":
-    #insert_sensor_info('ABCD1234',5,5,'2004-01-01 12:00:00');
-    #send_mail()
-    #generate_alarm()
-    router = BaseServer()
-    data = router.getClientLocation()
-    print data
+    new_process = os.fork()
+    if new_process == 0:
+        while True:
+            monitor_data()
+            time.sleep(10)
+    else:
+        while True:
+            router = BaseServer()
+            data = router.getClientLocation()
+            add_sensor_data(data)
+            time.sleep(5)
