@@ -1,9 +1,10 @@
-__author__ = 'NAVAL'
+__author__ = 'naval-ubuntu'
 
-import MySQLdb
+#import MySQLdb
 import smtplib
 from email.mime.text import MIMEText
 import os
+from COAP_Baseserver import BaseServer;
 
 def send_mail():
     sender = 'naval.gupta07@gmail.com'
@@ -56,6 +57,9 @@ def generate_alarm():
         print "Error: unable to generate alarm :  {err}".format(err=error)
 
 if __name__=="__main__":
-    insert_sensor_info('ABCD1234',5,5,'2004-01-01 12:00:00');
+    #insert_sensor_info('ABCD1234',5,5,'2004-01-01 12:00:00');
     #send_mail()
     #generate_alarm()
+    router = BaseServer()
+    data = router.getClientLocation()
+    print data
