@@ -67,9 +67,9 @@
       <file leaf-file-name="COAP_Baseserver.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/COAP_Baseserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+            <state line="31" column="16" selection-start="814" selection-end="814" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="915">
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#28#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,9 +78,28 @@
       <file leaf-file-name="controlserver.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controlserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.3456376" vertical-offset="752" max-vertical-offset="1050">
+            <state line="38" column="53" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.67639256" vertical-offset="315" max-vertical-offset="1275">
               <folding>
-                <element signature="e#29#43#0" expanded="true" />
+                <element signature="e#28#42#0" expanded="true" />
+                <element signature="e#1442#1604#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database_Mgmt.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Database_Mgmt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="32" selection-start="4066" selection-end="4066" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1020">
+              <folding>
+                <element signature="e#97#163#0" expanded="false" />
+                <element signature="e#204#279#0" expanded="false" />
+                <element signature="e#329#718#0" expanded="false" />
+                <element signature="e#767#1091#0" expanded="false" />
+                <element signature="e#1157#1491#0" expanded="false" />
+                <element signature="e#2120#2736#0" expanded="false" />
+                <element signature="e#2773#3240#0" expanded="false" />
+                <element signature="e#3276#3654#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,15 +119,17 @@
         <option value="$PROJECT_DIR$/COAP_Server.py" />
         <option value="$PROJECT_DIR$/coapget.py" />
         <option value="$PROJECT_DIR$/coap_server.py" />
+        <option value="$PROJECT_DIR$/Database_Mgmt.py" />
+        <option value="$PROJECT_DIR$/COAP_Baseserver.py" />
         <option value="$PROJECT_DIR$/controlserver.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="550" />
-    <option name="y" value="24" />
-    <option name="width" value="781" />
-    <option name="height" value="744" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -141,8 +162,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -163,6 +182,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,7 +197,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client1" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
   </component>
@@ -200,7 +221,9 @@
       <module name="Server" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controlserver.py" />
       <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -496,7 +519,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="550" y="24" width="781" height="744" extended-state="4" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -505,7 +528,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24260356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43343195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -515,8 +538,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3790013" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47839507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09377402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40236688" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -539,7 +562,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -547,6 +570,44 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/COAP_Baseserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="885">
+          <folding>
+            <element signature="e#28#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controlserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="17" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1320">
+          <folding>
+            <element signature="e#28#42#0" expanded="true" />
+            <element signature="e#1442#1604#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COAP_Baseserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="11" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="885">
+          <folding>
+            <element signature="e#28#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controlserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="21" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1320">
+          <folding>
+            <element signature="e#28#42#0" expanded="true" />
+            <element signature="e#1442#1604#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controlserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="14" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="990" />
@@ -562,20 +623,37 @@
         <state line="1" column="9" selection-start="10" selection-end="10" vertical-scroll-proportion="0.03521127" vertical-offset="0" max-vertical-offset="450" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Database_Mgmt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="32" selection-start="4066" selection-end="4066" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#97#163#0" expanded="false" />
+            <element signature="e#204#279#0" expanded="false" />
+            <element signature="e#329#718#0" expanded="false" />
+            <element signature="e#767#1091#0" expanded="false" />
+            <element signature="e#1157#1491#0" expanded="false" />
+            <element signature="e#2120#2736#0" expanded="false" />
+            <element signature="e#2773#3240#0" expanded="false" />
+            <element signature="e#3276#3654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/COAP_Baseserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+        <state line="31" column="16" selection-start="814" selection-end="814" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="915">
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#28#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1841" selection-end="1841" vertical-scroll-proportion="0.3456376" vertical-offset="752" max-vertical-offset="1050">
+        <state line="38" column="53" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.67639256" vertical-offset="315" max-vertical-offset="1275">
           <folding>
-            <element signature="e#29#43#0" expanded="true" />
+            <element signature="e#28#42#0" expanded="true" />
+            <element signature="e#1442#1604#0" expanded="false" />
           </folding>
         </state>
       </provider>

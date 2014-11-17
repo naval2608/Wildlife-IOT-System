@@ -5,14 +5,23 @@ import smtplib
 from email.mime.text import MIMEText
 import os
 import time
-from COAP_Baseserver import BaseServer;
+import datetime
+from COAP_Baseserver import BaseServer
+from Database_Mgmt import DBMS
 
-def send_mail():
+def send_mail(tiger_id, flag):
     sender = 'naval.gupta07@gmail.com'
     receivers = 'naval.gupta07@gmail.com'
-
-    #Create the message
-    msg = MIMEText("This is a test e-mail message.", "plain")
+    content = ""
+    if(flag == 1):
+        #crossed the boundary
+        content +=  (tiger_id + " has crossed the reserve boundary")
+    elif(flag == 2):
+        content += (tiger_id + "has no details. Contact Forest Rangers.")
+    elif(flag == 3):
+        content += (tiger_id + "has not moved. Contact Forest Rangers.")
+    print content
+    msg = MIMEText(content, "plain")
     msg["Subject"] = "System Alert"
     msg["From"] = sender
     msg["To"] = receivers
@@ -27,28 +36,11 @@ def send_mail():
         smtpObj.starttls()
         smtpObj.ehlo()
         #Login to service
-        smtpObj.login(user=receivers, password='vesper2901')
+        smtpObj.login(user=receivers, password='*****')
         smtpObj.sendmail(sender, receivers, msg.as_string())
-        print "Successfully sent email"
+        #print "Successfully sent email"
     except smtplib.SMTPException as error:
         print "Error: unable to send email :  {err}".format(err=error)
-
-def insert_sensor_info(id,lat,long,time_info):
-    # Open database connection
-    db = MySQLdb.connect("localhost", "root", "", "iot_project");
-    cursor = db.cursor()
-    sql = "INSERT INTO sensor_info(rfid,latitude,longitude,record_time) VALUES ('" \
-          + id + "'," + str(lat) + "," + str(long) + ",'" + time_info + "')";
-    try:
-        # Execute the SQL command
-        cursor.execute(sql)
-        # Commit your changes in the database
-        db.commit()
-    except:
-        # Rollback in case there is any error
-        db.rollback()
-    # disconnect from server
-    db.close()
 
 def generate_alarm():
     try:
@@ -56,27 +48,36 @@ def generate_alarm():
     except Exception as error:
         print "Error: unable to generate alarm :  {err}".format(err=error)
 
-def add_sensor_data(data):
-    if data:
-        id = data['rfid']
-        latitude = data['location']['latitude']
-        longitude = data['location']['longitude']
-        record_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(data['record_time']))
-        print "Incoming data- Rfid:",id," Timestamp:",str(record_time)
-        insert_sensor_info(id,latitude,longitude,record_time);
-
-def monitor_data():
-    print "hello"
-
 if __name__=="__main__":
+    sensor_list = [('localhost',60001),('localhost',60002)]
+    dbms = DBMS()
     new_process = os.fork()
     if new_process == 0:
+        boundary_x,boundary_y = dbms.getBoundary()
         while True:
-            monitor_data()
-            time.sleep(10)
+            tiger_list = dbms.get_tigers()
+            for tiger in tiger_list:
+                flag = dbms.check_boundary(tiger,boundary_x,boundary_y)
+                if flag > 0:
+                    send_mail(tiger,flag)
+                timestamp = dbms.get_last_record_time(tiger)
+                if timestamp == -1:
+                    send_mail(tiger,2)
+                else:
+                    time_diff = (datetime.datetime.now() - timestamp).total_seconds()
+                    if time_diff > 60:
+                        send_mail(tiger,3)
+            time.sleep(30)
     else:
         while True:
-            router = BaseServer()
-            data = router.getClientLocation()
-            add_sensor_data(data)
+            for sensor in sensor_list:
+                print "Contacting sensor",sensor
+                router = BaseServer(sensor[0],sensor[1])
+                data = router.getClientLocation()
+                if data != 0:
+                    #response from the client sensor
+                    new_flag = dbms.check_New_Tiger(data['rfid'])
+                    if new_flag == 0:
+                        dbms.add_tiger_info(data['rfid'])
+                    dbms.add_sensor_data(data)
             time.sleep(5)

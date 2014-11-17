@@ -9,9 +9,11 @@ import json
 
 class BaseServer():
 
-    def __init__(self):
-        self.host = 'localhost'
-        self.port = 61616
+    def __init__(self,host,port):
+        #self.host = 'localhost'
+        #self.port = 61616
+        self.host = host
+        self.port = port
         self.uri_path = 'Geolocation'
 
 
@@ -25,10 +27,10 @@ class BaseServer():
             rv = ep.process(1000)
 
             if rv is None:
-                print 'No message received; waiting'
+                #print 'No message received; waiting'
                 wait_counter += 1
                 if wait_counter == 10:
-                    print 'No message received; New request sent'
+                    #print 'No message received; New request sent'
                     break
                 continue
             msg = rv.message
@@ -45,7 +47,7 @@ class BaseServer():
                 print msg.payload
             elif 'application/link-format' == ct.value_as_string:
                 data = json.loads(msg.payload)
-                print "Got NON Payload from Sensor,",msg
+                #print "Got NON Payload from Sensor,",msg
                 return data
             else:
                 print 'Unhandled content type'
